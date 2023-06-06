@@ -4,34 +4,24 @@
 // задать на старте выполнения алгоритма. При решении не рекомендуется 
 // пользоваться коллекциями, лучше обойтись исключительно массивами.
 
-//метод вывода двумерного массива на экран
-
-
-// метод вывода на экран массива (элемент - значение)
-void ShowIntMas (int [] array)
+void ShowIntMas (string [] array)
 {
-    for (int count=0; count <array.Length; count++) Console.WriteLine ($"Элемент массива {count} - {array[count]}");
+    for (int count=0; count <array.Length; count++) Console.Write(array[count]+ " ");
+    Console.WriteLine();
 }
-// ShowIntMas (myArray);
 
-
-int [] CopyArray (int[] array)
+string [] WordsFromTheFirstThreeLetters (string[] array)
 {
-    int[] mas = new int [array.Length];
-    for (int i=0; i<array.Length; i++) mas[i]=array[i];
+    string[] mas = new string [array.Length];
+    for (int i=0; i<array.Length; i++)
+        mas [i] = array [i].Substring(0, 3); 
     return mas;
 }
-// int [] newArray= CopyArray(myArray);
-// ShowIntMas(newArray);
+
+string[] words = { "зубр", "волк", "носорог", "макака" };
+ShowIntMas(words);
+string [] whichWord = WordsFromTheFirstThreeLetters(words);
+ShowIntMas (whichWord);
 
 
-// char[] s = { 'a', 'и','с','в'};
-// int count = s.Length;
-// int n = 1;
-// for (int i = 0; i < count; i++)
-// {
-//     for (int j=0; j < count; j++)
-//     {
-//         Console.WriteLine($"{n++,-5}{s[i]}{s[j]}");
-//     }
-// }
+
